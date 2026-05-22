@@ -23,8 +23,7 @@ const useRepo = AppDataSource.getRepository(User)
 class AuthController {
     private getOAuthRedirectUrl = (token: string | null) => {
         const normalizedOrigin = Config.corsOrigin.replace(/\/+$/, '')
-        const hasReactBase = /\/react-app$/i.test(normalizedOrigin)
-        const oauthPath = hasReactBase ? '/oauth2' : '/react-app/oauth2'
+        const oauthPath = '/oauth2'
         return `${normalizedOrigin}${oauthPath}?token=${token ?? 'null'}`
     }
 

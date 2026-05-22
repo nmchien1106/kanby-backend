@@ -21,16 +21,16 @@ interface ConfigTypes {
     corsOrigin: string
     baseUrl: string
     NODE_ENV: 'development' | 'production'
-    cloudinaryName: string 
+    cloudinaryName: string
     cloudinaryApiKey: string
     cloudinaryApiSecret: string
     defaultGap: number
 }
 
 export const Config: ConfigTypes = {
-    dbUsername: process.env.DB_USERNAME || '',
-    dbPassword: process.env.DB_PASSWORD || '',
-    dbName: process.env.DB_DATABASE || '',
+    dbUsername: process.env.POSTGRES_USER || '',
+    dbPassword: process.env.POSTGRES_PASSWORD || '',
+    dbName: process.env.POSTGRES_DB || '',
     dbHost: process.env.DB_HOST || '',
     accessTokenSecret: process.env.ACCESS_TOKEN_SECRET || '',
     accessTokenExpiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN || '',
@@ -46,8 +46,8 @@ export const Config: ConfigTypes = {
     corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:5173',
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     NODE_ENV: (process.env.NODE_ENV as 'development' | 'production') || 'development',
-    cloudinaryName: process.env.CLOUDINARY_CLOUD_NAME || '', 
+    cloudinaryName: process.env.CLOUDINARY_CLOUD_NAME || '',
     cloudinaryApiKey: process.env.CLOUDINARY_API_KEY || '',
     cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET || '',
-    defaultGap: parseInt(process.env.DEFAULT_GAP || '100'),
+    defaultGap: parseInt(process.env.DEFAULT_GAP || '100')
 }
