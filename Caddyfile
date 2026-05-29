@@ -1,0 +1,3 @@
+chiendev.id.vn {
+    reverse_proxy app:3000
+}
